@@ -64,7 +64,7 @@ const BookingModal = ({ onClose }) => {
     <div className="bm-overlay" onClick={onClose}>
       <div className="bm-container" onClick={(e) => e.stopPropagation()}>
         <button className="bm-close" onClick={onClose}>&times;</button>
-
+        <div className="bm-content-scroll">
         <div className="bm-progress">
           <div className={`bm-step ${step >= 1 ? 'active' : ''}`}>1</div>
           <div className="bm-line"></div>
@@ -169,7 +169,7 @@ const BookingModal = ({ onClose }) => {
             <button className="bm-btn bm-btn-primary bm-full" onClick={onClose}>Close</button>
           </div>
         )}
-
+ </div>
         <style>{`
           .bm-overlay {
             position: fixed;
@@ -187,11 +187,31 @@ const BookingModal = ({ onClose }) => {
             background: #fff;
             width: 100%;
             max-width: 500px;
+            max-height: 90vh;
+            box-sizing: border-box;
             border-radius: 30px;
-            padding: 40px;
             position: relative;
             box-shadow: 0 25px 50px rgba(0,0,0,0.2);
             animation: bmAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+          }
+
+          .bm-content-scroll {
+            overflow-y: auto;
+            padding: 40px 40px 0 40px;
+            flex: 1;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 transparent;
+          }
+
+          .bm-content-scroll::-webkit-scrollbar {
+            width: 6px;
+          }
+          .bm-content-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
           }
 
           @keyframes bmAppear {
@@ -231,7 +251,7 @@ const BookingModal = ({ onClose }) => {
           }
           .bm-step.active { background: #1a73e8; color: #fff; }
           .bm-line { width: 40px; height: 2px; background: #f1f5f9; margin: 0 10px; }
-
+          .bm-modal-step { padding-bottom: 40px; }
           .bm-modal-step h2 { font-size: 1.8rem; margin-bottom: 10px; color: #0f172a; }
           .bm-modal-step p  { color: #64748b; margin-bottom: 25px; }
 
