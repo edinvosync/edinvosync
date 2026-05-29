@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { countryCodes } from '../utils/countryCodes';
 
 const BookingModal = ({ onClose }) => {
   const [step, setStep] = useState(1);
@@ -10,6 +11,7 @@ const BookingModal = ({ onClose }) => {
     name: '',
     email: '',
     storeName: '',
+    countryCode: '+1',
     phone: '',
     language: ''
   });
@@ -26,7 +28,7 @@ const BookingModal = ({ onClose }) => {
         name: bookingData.name,
         email: bookingData.email,
         storeName: bookingData.storeName,
-        phone: bookingData.phone,
+        phone: `${bookingData.countryCode} ${bookingData.phone}`,
         language: bookingData.language,
         date: bookingData.date,
         time: bookingData.time,
@@ -133,7 +135,20 @@ const BookingModal = ({ onClose }) => {
               </div>
               <div className="bm-form-group">
                 <label>Contact Number</label>
-                <input type="tel" required placeholder="Enter your contact number" maxLength="10" pattern="[0-9]*"
+                 <div className="bm-phone-input">
+                  <select
+                    className="bm-select bm-country-select"
+                    value={bookingData.countryCode}
+                    onChange={(e) => setBookingData({ ...bookingData, countryCode: e.target.value })}
+                  >
+                    {countryCodes.map((country, index) => (
+                      <option key={`${country.code}-${index}`} value={country.code} title={country.name}>
+                        {country.emoji} {country.code}
+                      </option>
+                    ))}
+                  </select>
+
+               <input type="tel" required placeholder="Enter your contact number" maxLength="10" pattern="[0-9]*"
                   value={bookingData.phone}
                   onChange={(e) => {
                     const val = e.target.value.replace(/\D/g, '');
@@ -141,6 +156,7 @@ const BookingModal = ({ onClose }) => {
                       setBookingData({ ...bookingData, phone: val });
                     }
                   }} />
+                    </div>
               </div>
               <div className="bm-form-group">
                 <label>Preferred Language</label>
@@ -276,7 +292,21 @@ const BookingModal = ({ onClose }) => {
             padding-right: 2.5rem;
             cursor: pointer;
           }
-
+           .bm-phone-input {
+            display: flex;
+            gap: 10px;
+          }
+          .bm-country-select {
+            width: 105px;
+            flex-shrink: 0;
+            padding: 14px 10px;
+            background-position: right 0.5rem center;
+            padding-right: 1.8rem;
+          }
+          .bm-phone-input input {
+            flex: 1;
+            min-width: 0;
+          }
           .bm-time-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
