@@ -13,21 +13,21 @@ const values = [
 
 const journey = [
   { 
-    date: 'October 2024', 
+    date: 'September 2025', 
     title: 'The Foundation', 
-    desc: 'EDInvoSync was born with a singular vision: to revolutionize how enterprises exchange data, eliminating manual friction from global trade.',
+    desc: 'EDInvosync was born with a singular vision: to revolutionize how enterprises exchange data, eliminating manual friction from global trade.',
     icon: '🌱',
     color: '#1a73e8'
   },
   { 
-    date: 'December 2023', 
+    date: 'December 2025', 
     title: 'First Major Milestone', 
     desc: 'Successfully launched our core EDI-to-ERP bridge, enabling seamless synchronization for our first wave of enterprise partners.',
     icon: '⚡',
     color: '#7c3aed'
   },
   { 
-    date: 'Early 2024', 
+    date: 'Early 2026', 
     title: 'Global Expansion', 
     desc: 'Expanded our infrastructure to support multi-national logistics and complex cross-border compliance standards.',
     icon: '🌍',
@@ -82,7 +82,7 @@ const About = () => {
           <span className="about-eyebrow reveal">Who We Are</span>
           <h1 className="about-hero-title reveal">Building the Future of <span className="text-gradient">Digital Connectivity</span></h1>
           <p className="about-hero-sub reveal">
-            EDInvoSync is a technology company on a mission to eliminate friction from enterprise data exchange —
+            EDInvosync is a technology company on a mission to eliminate friction from enterprise data exchange —
             empowering businesses to move faster, connect smarter, and grow without limits.
           </p>
         </div>
