@@ -11,7 +11,7 @@ const BookingModal = ({ onClose }) => {
     name: '',
     email: '',
     storeName: '',
-    countryCode: '+1',
+    countryName: 'United States',
     phone: '',
     language: ''
   });
@@ -28,7 +28,7 @@ const BookingModal = ({ onClose }) => {
         name: bookingData.name,
         email: bookingData.email,
         storeName: bookingData.storeName,
-        phone: `${bookingData.countryCode} ${bookingData.phone}`,
+        phone: `${countryCodes.find(c => c.name === bookingData.countryName)?.code || '+1'} ${bookingData.phone}`,
         language: bookingData.language,
         date: bookingData.date,
         time: bookingData.time,
@@ -138,11 +138,11 @@ const BookingModal = ({ onClose }) => {
                  <div className="bm-phone-input">
                   <select
                     className="bm-select bm-country-select"
-                    value={bookingData.countryCode}
-                    onChange={(e) => setBookingData({ ...bookingData, countryCode: e.target.value })}
+                    value={bookingData.countryName}
+                      onChange={(e) => setBookingData({ ...bookingData, countryName: e.target.value })}
                   >
                     {countryCodes.map((country, index) => (
-                      <option key={`${country.code}-${index}`} value={country.code} title={country.name}>
+                     <option key={`${country.code}-${index}`} value={country.name} title={country.name}>
                         {country.emoji} {country.code}
                       </option>
                     ))}
