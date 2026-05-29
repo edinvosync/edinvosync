@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer section-padding">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src={logo} alt="EDInvoSync Logo" className="footer-logo" />
+          <img src={logo} alt="EDInvosync Logo" className="footer-logo" />
           <p>
             Revolutionizing enterprise data synchronization through
             innovative EDI solutions and real-time connectivity.
