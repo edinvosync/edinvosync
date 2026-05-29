@@ -133,8 +133,14 @@ const BookingModal = ({ onClose }) => {
               </div>
               <div className="bm-form-group">
                 <label>Contact Number</label>
-                <input type="tel" required placeholder="Enter your contact number"
-                  onChange={(e) => setBookingData({ ...bookingData, phone: e.target.value })} />
+                <input type="tel" required placeholder="Enter your contact number" maxLength="10" pattern="[0-9]*"
+                  value={bookingData.phone}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, '');
+                    if (val.length <= 10) {
+                      setBookingData({ ...bookingData, phone: val });
+                    }
+                  }} />
               </div>
               <div className="bm-form-group">
                 <label>Preferred Language</label>
