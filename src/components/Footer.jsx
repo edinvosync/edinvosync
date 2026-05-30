@@ -71,7 +71,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} EDInvoSync. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} EDInvosync. All rights reserved.</p>
         </div>
       </div>
 
