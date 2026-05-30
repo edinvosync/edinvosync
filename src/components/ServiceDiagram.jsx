@@ -92,7 +92,7 @@ const ServiceDiagram = () => {
           </div>
         </div>
       </div>
-
+      <div className="sd-content-area">
       <div className="sd-cables-container">
         <svg className="sd-cables-svg" viewBox="0 0 130 530">
           <defs>
@@ -108,13 +108,23 @@ const ServiceDiagram = () => {
             const isActive = activeNodes.includes(service.id);
             return (
               <g key={`cable-${service.id}`} className={isActive ? 'cable-active' : 'cable-inactive'}>
-                {/* Curved solid wire */}
+                 {/* Desktop Path */}
                 <path 
                   d={`M 0 ${service.startY} C 35 ${service.startY}, 35 ${service.endY}, 65 ${service.endY}`} 
                   fill="none" 
                   stroke={service.color} 
                   strokeWidth="4" 
-                  className="sd-cable-path"
+                  className="sd-cable-path desktop-path"
+                />
+                
+                {/* Mobile Path */}
+                <path 
+                  d={`M 65 -30 C 65 -10, ${10 + (5 - service.id) * 12} -10, ${10 + (5 - service.id) * 12} 15 L ${10 + (5 - service.id) * 12} ${service.endY - 20} Q ${10 + (5 - service.id) * 12} ${service.endY} 65 ${service.endY}`} 
+                  fill="none" 
+                  stroke={service.color} 
+                  strokeWidth="4" 
+                  className="sd-cable-path mobile-path"
+                
                 />
                 
                 {/* 3D Plug */}
@@ -183,7 +193,7 @@ const ServiceDiagram = () => {
           );
         })}
       </div>
-
+</div>
       <style>{`
         .service-diagram-wrapper {
           display: flex;
@@ -258,11 +268,18 @@ const ServiceDiagram = () => {
           flex-shrink: 0;
           position: relative;
         }
-
+         .sd-content-area {
+          display: flex;
+          align-items: center;
+          position: relative;
+          width: 100%;
+          justify-content: center;
+        }
         .sd-cables-svg {
           width: 100%;
           height: 100%;
           display: block;
+          overflow: visible;
         }
 
         .cable-inactive {
@@ -270,9 +287,13 @@ const ServiceDiagram = () => {
         }
 
         .cable-active .sd-cable-path {
-          stroke-dasharray: 400;
-          stroke-dashoffset: 400;
-          animation: drawWire 0.8s ease-out forwards;
+         stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: drawWire 1.5s ease-out forwards;
+        }
+
+        .mobile-path {
+          display: none;
         }
 
         .cable-active .sd-plug-group {
@@ -428,11 +449,30 @@ const ServiceDiagram = () => {
             flex-direction: column;
             gap: 2rem;
           }
-          .sd-cables-container {
+           .desktop-path {
             display: none;
           }
-          .sd-node-icon-box {
-            margin-left: 15px;
+          .mobile-path {
+            display: block;
+          }
+          .sd-content-area {
+            transform: scale(0.9);
+            transform-origin: top center;
+            margin-bottom: -50px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .sd-content-area {
+            transform: scale(0.8);
+            margin-bottom: -100px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .sd-content-area {
+            transform: scale(0.65);
+            margin-bottom: -180px;
           }
         }
       `}</style>
