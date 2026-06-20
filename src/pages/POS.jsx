@@ -697,7 +697,8 @@ const POS = () => {
         .container {
           max-width: 1300px;
           margin: 0 auto;
-          padding: 0 40px;
+          padding-left: 40px;
+          padding-right: 40px;
           position: relative;
           z-index: 1;
         }
@@ -1145,12 +1146,27 @@ const POS = () => {
             grid-template-columns: 1fr;
             gap: 60px;
           }
-          .features-section-title {
+          .section-header h2,
+          .features-section-title,
+          .payment-section-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
             gap: 8px;
+            flex-wrap: wrap;
+            text-align: center;
           }
           .title-spark-left, .title-spark-right {
             width: 22px;
             height: 22px;
+          }
+          .section-header {
+            margin-bottom: 40px;
+          }
+          .pos-features {
+            padding: 90px 0 60px;
+          }
+          .pos-powerful-features {
+            padding: 90px 0 60px;
           }
         }
         

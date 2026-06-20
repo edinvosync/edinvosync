@@ -585,7 +585,8 @@ const DigitalMarketing = () => {
         .container {
           max-width: 1300px;
           margin: 0 auto;
-          padding: 0 40px;
+          padding-left: 40px;
+          padding-right: 40px;
           position: relative;
           z-index: 1;
         }
@@ -1067,7 +1068,7 @@ const DigitalMarketing = () => {
 
         @media (max-width: 768px) {
           .pos-features, .pos-powerful-features {
-            padding: 60px 0;
+            padding: 90px 0 60px;
           }
           .showcase-card-hz {
             flex-direction: row;
@@ -1094,10 +1095,11 @@ const DigitalMarketing = () => {
 
         @media (max-width: 480px) {
           .pos-features, .pos-powerful-features {
-            padding: 50px 0;
+            padding: 80px 0 50px;
           }
-          .container {
-            padding: 0 20px;
+           .container {
+            padding-left: 20px;
+            padding-right: 20px;
           }
           .showcase-card-hz {
             flex-direction: row;
@@ -1472,6 +1474,19 @@ const DigitalMarketing = () => {
         }
 
         @media (max-width: 768px) {
+          .section-header h2 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+          }
+          .section-header {
+            margin-bottom: 40px;
+          }
+          .dm-feature-card {
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+          }
           .process-card {
             width: 45%;
           }

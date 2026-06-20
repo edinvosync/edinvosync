@@ -572,7 +572,8 @@ const CreditCardProcessing = () => {
         .container {
           max-width: 1300px;
           margin: 0 auto;
-          padding: 0 40px;
+          padding-left: 40px;
+          padding-right: 40px;
           position: relative;
           z-index: 1;
         }
@@ -1071,7 +1072,7 @@ const CreditCardProcessing = () => {
             gap: 16px;
           }
           .pos-payment-methods {
-            padding: 60px 0;
+            padding: 90px 0 60px;
           }
         }
 
@@ -1458,6 +1459,32 @@ const CreditCardProcessing = () => {
         }
         .dm-btn-primary:hover svg {
           transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+          .section-header h2,
+          .features-section-title,
+          .payment-section-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            gap: 8px;
+            flex-wrap: wrap;
+            text-align: center;
+          }
+          .title-spark-left,
+          .title-spark-right {
+            width: 22px;
+            height: 22px;
+          }
+          .section-header {
+            margin-bottom: 40px;
+          }
+          .pos-features {
+            padding: 90px 0 60px;
+          }
+          .pos-powerful-features {
+            padding: 90px 0 60px;
+          }
         }
 
         @keyframes dmSlideUp {
