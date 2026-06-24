@@ -8,6 +8,7 @@ const BookingModal = ({ onClose }) => {
   const [bookingData, setBookingData] = useState({
     date: '',
     time: '',
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     name: '',
     email: '',
     storeName: '',
@@ -32,7 +33,7 @@ const BookingModal = ({ onClose }) => {
         language: bookingData.language,
         date: bookingData.date,
         time: bookingData.time,
-        message: `A new demo has been scheduled by ${bookingData.name} (${bookingData.email}) for ${bookingData.date} at ${bookingData.time}.`
+        message: `A new demo has been scheduled by ${bookingData.name} (${bookingData.email}) for ${bookingData.date} at ${bookingData.time} (${bookingData.timezone}).`
       };
 
       // Send email to admin
@@ -89,11 +90,73 @@ const BookingModal = ({ onClose }) => {
                   onChange={(e) => setBookingData({ ...bookingData, date: e.target.value })}
                 />
               </div>
+              <div className="bm-form-group">
+                <label>Time Zone</label>
+                <select
+                  className="bm-select"
+                  value={bookingData.timezone}
+                  onChange={(e) => setBookingData({ ...bookingData, timezone: e.target.value })}
+                >
+                  <optgroup label="Americas">
+                    <option value="America/New_York">Eastern Time (ET) — New York</option>
+                    <option value="America/Chicago">Central Time (CT) — Chicago</option>
+                    <option value="America/Denver">Mountain Time (MT) — Denver</option>
+                    <option value="America/Los_Angeles">Pacific Time (PT) — Los Angeles</option>
+                    <option value="America/Anchorage">Alaska Time — Anchorage</option>
+                    <option value="Pacific/Honolulu">Hawaii Time — Honolulu</option>
+                    <option value="America/Toronto">Eastern Time — Toronto</option>
+                    <option value="America/Vancouver">Pacific Time — Vancouver</option>
+                    <option value="America/Sao_Paulo">Brasília Time — São Paulo</option>
+                    <option value="America/Argentina/Buenos_Aires">ART — Buenos Aires</option>
+                    <option value="America/Mexico_City">Central Time — Mexico City</option>
+                    <option value="America/Bogota">Colombia Time — Bogotá</option>
+                  </optgroup>
+                  <optgroup label="Europe">
+                    <option value="Europe/London">GMT/BST — London</option>
+                    <option value="Europe/Paris">CET/CEST — Paris</option>
+                    <option value="Europe/Berlin">CET/CEST — Berlin</option>
+                    <option value="Europe/Madrid">CET/CEST — Madrid</option>
+                    <option value="Europe/Rome">CET/CEST — Rome</option>
+                    <option value="Europe/Amsterdam">CET/CEST — Amsterdam</option>
+                    <option value="Europe/Stockholm">CET/CEST — Stockholm</option>
+                    <option value="Europe/Moscow">MSK — Moscow</option>
+                    <option value="Europe/Istanbul">TRT — Istanbul</option>
+                    <option value="Europe/Warsaw">CET/CEST — Warsaw</option>
+                    <option value="Europe/Zurich">CET/CEST — Zurich</option>
+                  </optgroup>
+                  <optgroup label="Asia &amp; Pacific">
+                    <option value="Asia/Dubai">GST — Dubai</option>
+                    <option value="Asia/Karachi">PKT — Karachi</option>
+                    <option value="Asia/Kolkata">IST — India (Kolkata)</option>
+                    <option value="Asia/Dhaka">BST — Dhaka</option>
+                    <option value="Asia/Bangkok">ICT — Bangkok</option>
+                    <option value="Asia/Singapore">SGT — Singapore</option>
+                    <option value="Asia/Shanghai">CST — Shanghai / Beijing</option>
+                    <option value="Asia/Tokyo">JST — Tokyo</option>
+                    <option value="Asia/Seoul">KST — Seoul</option>
+                    <option value="Australia/Sydney">AEST/AEDT — Sydney</option>
+                    <option value="Pacific/Auckland">NZST/NZDT — Auckland</option>
+                  </optgroup>
+                  <optgroup label="Africa &amp; Middle East">
+                    <option value="Africa/Cairo">EET — Cairo</option>
+                    <option value="Africa/Nairobi">EAT — Nairobi</option>
+                    <option value="Africa/Lagos">WAT — Lagos</option>
+                    <option value="Africa/Johannesburg">SAST — Johannesburg</option>
+                    <option value="Asia/Riyadh">AST — Riyadh</option>
+                    <option value="Asia/Tehran">IRST — Tehran</option>
+                  </optgroup>
+                </select>
+              </div>
               <div className="bm-time-grid">
                 {[
-                  '09:00 PM', '09:30 PM', '10:00 PM', '10:30 PM', '11:00 PM', '11:30 PM',
                   '12:00 AM', '12:30 AM', '01:00 AM', '01:30 AM', '02:00 AM', '02:30 AM',
-                  '03:00 AM', '03:30 AM', '04:00 AM', '04:30 AM', '05:00 AM', '05:30 AM'
+                  '03:00 AM', '03:30 AM', '04:00 AM', '04:30 AM', '05:00 AM', '05:30 AM',
+                  '06:00 AM', '06:30 AM', '07:00 AM', '07:30 AM', '08:00 AM', '08:30 AM',
+                  '09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
+                  '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM', '02:00 PM', '02:30 PM',
+                  '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM',
+                  '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM', '08:00 PM', '08:30 PM',
+                  '09:00 PM', '09:30 PM', '10:00 PM', '10:30 PM', '11:00 PM', '11:30 PM'
                 ].map((t) => (
                   <button
                     key={t}

@@ -10,7 +10,7 @@ const ServiceDiagram = () => {
     [1, 2, 3, 4, 5].forEach((num, index) => {
       timeouts.push(setTimeout(() => {
         setActiveNodes(prev => [...prev, num]);
-      }, 500 * (index + 1))); 
+      }, 500 * (index + 1)));
     });
 
     return () => timeouts.forEach(clearTimeout);
@@ -45,7 +45,7 @@ const ServiceDiagram = () => {
   ];
 
   const getIcon = (id) => {
-    switch(id) {
+    switch (id) {
       case 1: return (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
@@ -96,103 +96,103 @@ const ServiceDiagram = () => {
       <div className="sd-content-area">
         <div className="sd-cables-container">
           <svg className="sd-cables-svg" viewBox="0 0 130 530">
-          <defs>
-            {services.map(s => (
-              <linearGradient key={`grad-${s.id}`} id={`plug-grad-${s.id}`} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor={s.gradStart} />
-                <stop offset="100%" stopColor={s.gradEnd} />
-              </linearGradient>
-            ))}
-          </defs>
-          
+            <defs>
+              {services.map(s => (
+                <linearGradient key={`grad-${s.id}`} id={`plug-grad-${s.id}`} x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor={s.gradStart} />
+                  <stop offset="100%" stopColor={s.gradEnd} />
+                </linearGradient>
+              ))}
+            </defs>
+
+            {services.map((service) => {
+              const isActive = activeNodes.includes(service.id);
+              return (
+                <g key={`cable-${service.id}`} className={isActive ? 'cable-active' : 'cable-inactive'}>
+                  {/* Desktop Path */}
+                  <path
+                    d={`M 0 ${service.startY} C 35 ${service.startY}, 35 ${service.endY}, 65 ${service.endY}`}
+                    fill="none"
+                    stroke={service.color}
+                    strokeWidth="4"
+                    className="sd-cable-path desktop-path"
+                  />
+
+                  {/* Mobile Path */}
+                  <path
+                    d={`M 65 -30 C 65 -10, ${10 + (5 - service.id) * 12} -10, ${10 + (5 - service.id) * 12} 15 L ${10 + (5 - service.id) * 12} ${service.endY - 20} Q ${10 + (5 - service.id) * 12} ${service.endY} 65 ${service.endY}`}
+                    fill="none"
+                    stroke={service.color}
+                    strokeWidth="4"
+                    className="sd-cable-path mobile-path"
+                  />
+
+                  {/* 3D Plug */}
+                  <g className="sd-plug-group">
+                    <rect x="65" y={service.endY - 12} width="24" height="24" rx="4" fill={`url(#plug-grad-${service.id})`} />
+                    <line x1="71" y1={service.endY - 8} x2="71" y2={service.endY + 8} stroke="#ffffff" strokeOpacity="0.4" strokeWidth="1" />
+                    <line x1="75" y1={service.endY - 8} x2="75" y2={service.endY + 8} stroke="#ffffff" strokeOpacity="0.4" strokeWidth="1" />
+                    <line x1="79" y1={service.endY - 8} x2="79" y2={service.endY + 8} stroke="#ffffff" strokeOpacity="0.4" strokeWidth="1" />
+                    <rect x="89" y={service.endY - 6} width="10" height="12" rx="1.5" fill="#cbd5e1" />
+                    <rect x="91" y={service.endY - 3} width="6" height="6" rx="1" fill="#94a3b8" />
+                  </g>
+
+                  {/* Energy beam from plug to node */}
+                  <path
+                    d={`M 99 ${service.endY} L 130 ${service.endY}`}
+                    stroke={service.color}
+                    strokeWidth="4"
+                    strokeDasharray="6 4"
+                    className="energy-beam"
+                    style={{ filter: `drop-shadow(0 0 6px ${service.color})` }}
+                  />
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+
+        <div className="sd-right-nodes">
           {services.map((service) => {
             const isActive = activeNodes.includes(service.id);
-            return (
-              <g key={`cable-${service.id}`} className={isActive ? 'cable-active' : 'cable-inactive'}>
-                {/* Desktop Path */}
-                <path 
-                  d={`M 0 ${service.startY} C 35 ${service.startY}, 35 ${service.endY}, 65 ${service.endY}`} 
-                  fill="none" 
-                  stroke={service.color} 
-                  strokeWidth="4" 
-                  className="sd-cable-path desktop-path"
-                />
-                
-                {/* Mobile Path */}
-                <path 
-                  d={`M 65 -30 C 65 -10, ${10 + (5 - service.id) * 12} -10, ${10 + (5 - service.id) * 12} 15 L ${10 + (5 - service.id) * 12} ${service.endY - 20} Q ${10 + (5 - service.id) * 12} ${service.endY} 65 ${service.endY}`} 
-                  fill="none" 
-                  stroke={service.color} 
-                  strokeWidth="4" 
-                  className="sd-cable-path mobile-path"
-                />
-                
-                {/* 3D Plug */}
-                <g className="sd-plug-group">
-                  <rect x="65" y={service.endY - 12} width="24" height="24" rx="4" fill={`url(#plug-grad-${service.id})`} />
-                  <line x1="71" y1={service.endY - 8} x2="71" y2={service.endY + 8} stroke="#ffffff" strokeOpacity="0.4" strokeWidth="1" />
-                  <line x1="75" y1={service.endY - 8} x2="75" y2={service.endY + 8} stroke="#ffffff" strokeOpacity="0.4" strokeWidth="1" />
-                  <line x1="79" y1={service.endY - 8} x2="79" y2={service.endY + 8} stroke="#ffffff" strokeOpacity="0.4" strokeWidth="1" />
-                  <rect x="89" y={service.endY - 6} width="10" height="12" rx="1.5" fill="#cbd5e1" />
-                  <rect x="91" y={service.endY - 3} width="6" height="6" rx="1" fill="#94a3b8" />
-                </g>
+            const NodeContent = (
+              <div className={`sd-node-wrapper ${isActive ? 'active' : ''}`}>
+                <div className="sd-node" style={{ '--node-color': service.color }}>
+                  {/* 3D Squircle Icon */}
+                  <div className="sd-node-icon-box" style={{ background: `linear-gradient(135deg, ${service.gradStart}, ${service.gradEnd})` }}>
+                    {getIcon(service.id)}
+                  </div>
 
-                {/* Energy beam from plug to node */}
-                <path 
-                  d={`M 99 ${service.endY} L 130 ${service.endY}`} 
-                  stroke={service.color} 
-                  strokeWidth="4" 
-                  strokeDasharray="6 4" 
-                  className="energy-beam" 
-                  style={{ filter: `drop-shadow(0 0 6px ${service.color})` }}
-                />
-              </g>
-            );
-          })}
-        </svg>
-      </div>
+                  <div className="sd-node-content">
+                    <h4>{service.title}</h4>
+                    <p>{service.desc}</p>
+                  </div>
 
-      <div className="sd-right-nodes">
-        {services.map((service) => {
-          const isActive = activeNodes.includes(service.id);
-          const NodeContent = (
-            <div className={`sd-node-wrapper ${isActive ? 'active' : ''}`}>
-              <div className="sd-node" style={{ '--node-color': service.color }}>
-                {/* 3D Squircle Icon */}
-                <div className="sd-node-icon-box" style={{ background: `linear-gradient(135deg, ${service.gradStart}, ${service.gradEnd})` }}>
-                  {getIcon(service.id)}
-                </div>
-                
-                <div className="sd-node-content">
-                  <h4>{service.title}</h4>
-                  <p>{service.desc}</p>
-                </div>
-                
-                <div className="sd-node-divider"></div>
-                
-                <div className="sd-node-right">
-                  <div className="sd-node-num" style={{ color: `${service.color}66` }}>{service.num}</div>
-                  <div className="sd-node-line-indicator" style={{ '--node-color': service.color }}></div>
+                  <div className="sd-node-divider"></div>
+
+                  <div className="sd-node-right">
+                    <div className="sd-node-num" style={{ color: `${service.color}66` }}>{service.num}</div>
+                    <div className="sd-node-line-indicator" style={{ '--node-color': service.color }}></div>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-
-          if (service.isExternal) {
-            return (
-              <a key={service.id} href={service.link} target="_blank" rel="noopener noreferrer" className="sd-node-link">
-                {NodeContent}
-              </a>
             );
-          }
 
-          return (
-            <Link key={service.id} to={service.link} className="sd-node-link">
-              {NodeContent}
-            </Link>
-          );
-        })}
-      </div>
+            if (service.isExternal) {
+              return (
+                <a key={service.id} href={service.link} target="_blank" rel="noopener noreferrer" className="sd-node-link">
+                  {NodeContent}
+                </a>
+              );
+            }
+
+            return (
+              <Link key={service.id} to={service.link} className="sd-node-link">
+                {NodeContent}
+              </Link>
+            );
+          })}
+        </div>
       </div>
 
       <style>{`

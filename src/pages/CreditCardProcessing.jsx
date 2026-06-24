@@ -181,7 +181,7 @@ const CreditCardProcessing = () => {
           ].map((f, i) => (
             <div key={i} className="feature-card reveal" style={{ '--delay': `${i * 0.1}s`, '--accent-color': f.color }}>
               <div className="card-number" style={{ color: f.color, borderColor: `${f.color}33`, background: `${f.color}08` }}>{f.number}</div>
-              
+
               <div className="feature-icon-container">
                 <svg className="icon-ring" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="1.5" fill="none" strokeDasharray="4 4" />
@@ -195,7 +195,7 @@ const CreditCardProcessing = () => {
               <h3 className="feature-card-title">{f.title}</h3>
               <div className="feature-card-divider" style={{ background: f.color }}></div>
               <p className="feature-card-desc">{f.desc}</p>
-              
+
               <div className="card-wave" style={{ color: f.color }}>
                 <svg viewBox="0 0 100 30" preserveAspectRatio="none" style={{ width: '100%', height: '35px', display: 'block' }}>
                   <path d="M0,20 C30,10 70,30 100,15 L100,30 L0,30 Z" fill="currentColor" opacity="0.08" />
@@ -385,7 +385,7 @@ const CreditCardProcessing = () => {
               desc: "Credit Cards",
               logo: (
                 <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="40" height="40" rx="6" fill="#016fd0"/>
+                  <rect width="40" height="40" rx="6" fill="#016fd0" />
                   <text x="50%" y="42%" dominantBaseline="middle" textAnchor="middle" fill="#ffffff" fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif" fontWeight="900" fontSize="9" letterSpacing="1">AM</text>
                   <text x="50%" y="72%" dominantBaseline="middle" textAnchor="middle" fill="#ffffff" fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif" fontWeight="900" fontSize="9" letterSpacing="1">EX</text>
                 </svg>
@@ -421,10 +421,10 @@ const CreditCardProcessing = () => {
               desc: "Pay with Google Wallet",
               logo: (
                 <svg width="60" height="22" viewBox="0 0 60 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 11c0-.7-.1-1.4-.2-2H5v3.8h2.8c-.1.7-.5 1.3-1.1 1.7v2.8h1.8c1.1-1 1.7-2.5 1.7-4.3z" fill="#4285F4"/>
-                  <path d="M5 16c1.4 0 2.5-.5 3.3-1.3l-1.8-2.8c-.4.3-.9.5-1.5.5-1.2 0-2.2-.8-2.5-1.9H.6v2.9C1.5 14.8 3.1 16 5 16z" fill="#34A853"/>
-                  <path d="M2.5 10.5c-.1-.4-.2-.8-.2-1.2s.1-.8.2-1.2V5.2H.6C0 6.4-.3 7.8-.3 9.3c0 1.5.3 2.9.9 4.1l1.9-2.9z" fill="#FBBC05"/>
-                  <path d="M5 4.8c.8 0 1.5.3 2 .8l1.5-1.5C7.5 3.2 6.4 2.7 5 2.7 3.1 2.7 1.5 3.9.6 5.2l2.5 1.9c.3-1.1 1.3-1.9 1.9-1.9z" fill="#EA4335"/>
+                  <path d="M10 11c0-.7-.1-1.4-.2-2H5v3.8h2.8c-.1.7-.5 1.3-1.1 1.7v2.8h1.8c1.1-1 1.7-2.5 1.7-4.3z" fill="#4285F4" />
+                  <path d="M5 16c1.4 0 2.5-.5 3.3-1.3l-1.8-2.8c-.4.3-.9.5-1.5.5-1.2 0-2.2-.8-2.5-1.9H.6v2.9C1.5 14.8 3.1 16 5 16z" fill="#34A853" />
+                  <path d="M2.5 10.5c-.1-.4-.2-.8-.2-1.2s.1-.8.2-1.2V5.2H.6C0 6.4-.3 7.8-.3 9.3c0 1.5.3 2.9.9 4.1l1.9-2.9z" fill="#FBBC05" />
+                  <path d="M5 4.8c.8 0 1.5.3 2 .8l1.5-1.5C7.5 3.2 6.4 2.7 5 2.7 3.1 2.7 1.5 3.9.6 5.2l2.5 1.9c.3-1.1 1.3-1.9 1.9-1.9z" fill="#EA4335" />
                   <text x="14" y="16" fill="#5F6368" fontFamily="'Product Sans', Arial, sans-serif" fontWeight="bold" fontSize="15">Pay</text>
                 </svg>
               ),
@@ -460,9 +460,9 @@ const CreditCardProcessing = () => {
               desc: "Secure Online Payments",
               logo: (
                 <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.3 2H9.6c-.9 0-1.6.7-1.8 1.6L4.3 26.1c-.1.6.3 1.1.9 1.1h4.6l1.6-10c.1-.8.9-1.4 1.8-1.4h3.1c5.1 0 9.1-2.1 10.3-8.1C27.9 3.5 24.3 2 19.3 2z" fill="#003087"/>
-                  <path d="M22.3 8.8c-1.2 6-5.2 8.1-10.3 8.1H8.9c-.8 0-1.6.6-1.8 1.4l-2 12.3c-.1.7.4 1.3 1.1 1.3h4.6c.9 0 1.6-.7 1.8-1.6l1.6-10c.1-.8.9-1.4 1.8-1.4h3.1c4.7 0 8.3-1.9 9.4-7.5.5-2.6 0-4.6-1.2-5.9c-.5.8-1 2.3-1 3.3z" fill="#0079C1"/>
-                  <path d="M21.3 8.8c-.8 4.2-3.4 6.8-7.6 6.8H10.6c-.6 0-1.2.4-1.3 1l-1.6 10c0 .3-.3.5-.6.5H5.8L9.3 3.6c.2-.9.9-1.6 1.8-1.6h9.7c5 0 8.6 1.5 7.3 7.7-.3 1.5-.9 2.8-1.8 3.7c-.5-1.5-1.5-3.3-3-4.6z" fill="#00457C" opacity="0.15"/>
+                  <path d="M19.3 2H9.6c-.9 0-1.6.7-1.8 1.6L4.3 26.1c-.1.6.3 1.1.9 1.1h4.6l1.6-10c.1-.8.9-1.4 1.8-1.4h3.1c5.1 0 9.1-2.1 10.3-8.1C27.9 3.5 24.3 2 19.3 2z" fill="#003087" />
+                  <path d="M22.3 8.8c-1.2 6-5.2 8.1-10.3 8.1H8.9c-.8 0-1.6.6-1.8 1.4l-2 12.3c-.1.7.4 1.3 1.1 1.3h4.6c.9 0 1.6-.7 1.8-1.6l1.6-10c.1-.8.9-1.4 1.8-1.4h3.1c4.7 0 8.3-1.9 9.4-7.5.5-2.6 0-4.6-1.2-5.9c-.5.8-1 2.3-1 3.3z" fill="#0079C1" />
+                  <path d="M21.3 8.8c-.8 4.2-3.4 6.8-7.6 6.8H10.6c-.6 0-1.2.4-1.3 1l-1.6 10c0 .3-.3.5-.6.5H5.8L9.3 3.6c.2-.9.9-1.6 1.8-1.6h9.7c5 0 8.6 1.5 7.3 7.7-.3 1.5-.9 2.8-1.8 3.7c-.5-1.5-1.5-3.3-3-4.6z" fill="#00457C" opacity="0.15" />
                 </svg>
               ),
               shadowGlow: "rgba(0, 121, 193, 0.05)"
