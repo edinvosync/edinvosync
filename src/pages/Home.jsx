@@ -65,49 +65,70 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="why-choose-us">
+      <section className="why-choose-us-5">
+        <div className="bg-dots bg-dots-left"></div>
+        <div className="bg-dots bg-dots-right"></div>
         <div className="container">
-          <div className="section-header reveal-on-scroll">
-            <h2 className="section-title">Why <span className="text-gradient">Choose Us</span></h2>
-            <p className="section-desc">We combine industry expertise with cutting-edge technology to deliver solutions that drive real business results.</p>
+          <div className="section-header-5 reveal-on-scroll">
+            <h2>Why Retailers Choose<br />
+              <span className="brand-title">
+                EDInvosync
+              </span>
+            </h2>
           </div>
 
-          <div className="features-grid">
+          <div className="features-grid-5">
             {[
               {
-                title: "Innovation-First",
-                desc: "Cutting-edge technology tailored for modern enterprise growth and digital transformation.",
-                icon: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />,
-                color: "#3b82f6"
+                title: "Everything Connected",
+                desc: "POS, inventory, e-commerce, payments and EDI work together.",
+                icon: <><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></>,
+                color: "#1877f2",
+                bgLight: "rgba(24, 119, 242, 0.1)",
+                shadow: "rgba(24, 119, 242, 0.15)"
               },
               {
-                title: "24/7 Expert Support",
-                desc: "Dedicated assistance from our technical experts, ensuring your business never stops moving.",
-                icon: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
-                color: "#10b981"
+                title: "Built for Retail",
+                desc: "Designed around the daily challenges of retail businesses.",
+                icon: <><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></>,
+                color: "#16a34a",
+                bgLight: "rgba(22, 163, 74, 0.1)",
+                shadow: "rgba(22, 163, 74, 0.15)"
               },
               {
-                title: "Enterprise Security",
-                desc: "Bank-grade encryption and security protocols protecting your data at every single touchpoint.",
-                icon: <><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>,
-                color: "#f59e0b"
+                title: "Real-Time Inventory",
+                desc: "Know what you're selling and what's actually in stock.",
+                icon: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></>,
+                color: "#ea580c",
+                bgLight: "rgba(234, 88, 12, 0.1)",
+                shadow: "rgba(234, 88, 12, 0.15)"
               },
               {
-                title: "Seamless Scalability",
-                desc: "Flexible solutions that grow with your business, from local startups to global enterprise chains.",
-                icon: <path d="M22 12h-4l-3 9L9 3l-3 9H2" />,
-                color: "#8b5cf6"
+                title: "Multi-Location Control",
+                desc: "Manage multiple stores from one centralized system.",
+                icon: <><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>,
+                color: "#7c3aed",
+                bgLight: "rgba(124, 58, 237, 0.1)",
+                shadow: "rgba(124, 58, 237, 0.15)"
+              },
+              {
+                title: "Human Support",
+                desc: "Real people. Real help. Whenever you need it.",
+                icon: <><path d="M3 18v-6a9 9 0 0 1 18 0v6" /><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" /></>,
+                color: "#0d9488",
+                bgLight: "rgba(13, 148, 136, 0.1)",
+                shadow: "rgba(13, 148, 136, 0.15)"
               }
             ].map((feature, i) => (
-              <div key={i} className="feature-card reveal-on-scroll" style={{ '--feat-color': feature.color, animationDelay: `${i * 0.1}s` }}>
-                <div className="feature-icon-box" style={{ background: `${feature.color}15`, color: feature.color }}>
+              <div key={i} className="feature-card-5 reveal-on-scroll" style={{ '--color': feature.color, '--bg-light': feature.bgLight, '--shadow': feature.shadow, animationDelay: `${i * 0.1}s` }}>
+                <div className="card-5-corner"></div>
+                <div className="icon-box-5" style={{ background: feature.bgLight, color: feature.color }}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     {feature.icon}
                   </svg>
                 </div>
                 <h3>{feature.title}</h3>
                 <p>{feature.desc}</p>
-                <div className="feature-hover-line" style={{ background: feature.color }}></div>
               </div>
             ))}
           </div>
@@ -169,12 +190,127 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ── Industries We Serve ── */}
+      <section className="industries-section">
+        <div className="industries-blob-left"></div>
+        <div className="industries-blob-right"></div>
+        <div className="container">
+          <div className="industries-header reveal-on-scroll">
+            <div className="badge-pill">
+              <span className="badge-line"></span>
+              <span className="badge-text">BUILT FOR YOUR BUSINESS</span>
+              <span className="badge-line"></span>
+            </div>
+            <h2 className="industries-title">
+              <svg className="spark-left" viewBox="0 0 24 24" width="30" height="30"><path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" /></svg>
+              <span className="title-text">Industries <span className="brand-title" style={{ paddingBottom: 0 }}>We Serve</span></span>
+              <svg className="spark-right" viewBox="0 0 24 24" width="30" height="30"><path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" /></svg>
+            </h2>
+            <p className="industries-desc">
+              No matter what you sell, EDInvosync has the tools to help you run your business smarter, faster and more efficiently.
+            </p>
+          </div>
+
+          <div className="industries-grid">
+            {[
+              {
+                id: "grocery",
+                title: "Grocery Stores",
+                desc: "Inventory, barcode scanning, purchasing and reporting.",
+                checks: ["Real-time inventory tracking", "Barcode scanning", "Quick purchasing", "Detailed reporting"],
+                icon: <><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></>,
+                color: "#16a34a",
+                bgLight: "#dcfce7",
+                border: "#bbf7d0"
+              },
+              {
+                id: "convenience",
+                title: "Convenience Stores",
+                desc: "Fast checkout, inventory and multi-location management.",
+                checks: ["Speedy checkout", "Inventory control", "Multi-location support", "Sales & performance reports"],
+                icon: <><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><path d="M9 22V12h6v10" /></>,
+                color: "#2563eb",
+                bgLight: "#dbeafe",
+                border: "#bfdbfe"
+              },
+              {
+                id: "liquor",
+                title: "Liquor Stores",
+                desc: "Age verification, inventory management and reporting.",
+                checks: ["Age verification", "Stock tracking", "Compliance support", "Sales & analytics"],
+                icon: <><rect x="8" y="10" width="8" height="12" rx="2" /><path d="M10 2h4v4h-4zM10 6l-2 4h8l-2-4" /></>,
+                color: "#7c3aed",
+                bgLight: "#f3e8ff",
+                border: "#e9d5ff"
+              },
+              {
+                id: "smoke",
+                title: "Smoke Shops",
+                desc: "Product management, barcode scanning and compliance-oriented workflows.",
+                checks: ["Age verification", "Inventory tracking", "Barcode scanning", "Compliance support"],
+                icon: <><path d="M18 20V10M12 20V4M6 20v-6" /><path d="M10 4c0-2-2-2-2-2s-2 0-2 2 2 2 2 2-2 2-2 2" /><path d="M16 10c0-2-2-2-2-2s-2 0-2 2 2 2 2 2-2 2-2 2" /></>,
+                color: "#f97316",
+                bgLight: "#ffedd5",
+                border: "#fed7aa"
+              },
+              {
+                id: "retail",
+                title: "Retail Stores",
+                desc: "POS, inventory, customers and analytics.",
+                checks: ["Point of Sale (POS)", "Inventory management", "Customer management", "Business analytics"],
+                icon: <><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 01-8 0" /></>,
+                color: "#e11d48",
+                bgLight: "#ffe4e6",
+                border: "#fecdd3"
+              },
+              {
+                id: "multiloc",
+                title: "Multi-Location Businesses",
+                desc: "Centralized management across multiple stores.",
+                checks: ["Single dashboard", "Real-time sync", "Store-wise reporting", "Better control & visibility"],
+                icon: <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>,
+                color: "#0d9488",
+                bgLight: "#ccfbf1",
+                border: "#99f6e4"
+              }
+            ].map((ind, i) => (
+              <div key={i} className="industry-card reveal-on-scroll" style={{ '--ind-color': ind.color, '--ind-bg': ind.bgLight, '--ind-border': ind.border, animationDelay: `${i * 0.1}s` }}>
+                <div className="ind-bg-shape">
+                  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="var(--ind-bg)" d="M45,-75C58.3,-66.6,69.1,-52.8,76.5,-37.5C83.9,-22.2,87.9,-5.4,85.1,10.6C82.3,26.6,72.7,41.8,60.1,53.2C47.5,64.6,31.9,72.2,15.2,76.3C-1.5,80.4,-19.3,81.1,-34.5,75C-49.7,68.9,-62.3,56.1,-72.1,41.4C-81.9,26.7,-88.9,10.1,-87.8,-5.9C-86.7,-21.9,-77.5,-37.3,-65.4,-48.6C-53.3,-59.9,-38.3,-67.1,-23.4,-72.2C-8.5,-77.3,6.3,-80.3,21.8,-79.1C37.3,-77.9,45,-75,45,-75Z" transform="translate(100 100) scale(1.1)" />
+                  </svg>
+                </div>
+                <div className="ind-card-content">
+                  <div className="ind-card-header">
+                    <div className="ind-icon-box">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        {ind.icon}
+                      </svg>
+                    </div>
+                    <h3>{ind.title}</h3>
+                  </div>
+                  <p className="ind-desc">{ind.desc}</p>
+                  <ul className="ind-checks">
+                    {ind.checks.map((chk, idx) => (
+                      <li key={idx}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                        <span>{chk}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Testimonials ── */}
       <section className="testimonials-section">
         <div className="container">
-          <div className="section-header reveal-on-scroll">
-            <h2 className="section-title">Trusted by <span className="text-gradient">Businesses Like Yours</span></h2>
-            <p className="section-desc">Don't take our word for it — hear from the business owners who've transformed their operations with EDInvosync.</p>
+          <div className="section-header-left reveal-on-scroll">
+            <h2 className="section-title-left">Trusted by <span className="text-gradient-blue">Businesses Like Yours</span></h2>
+            <p className="section-desc-left">Don't take our word for it — hear from the business owners who've transformed their operations with EDInvosync.</p>
           </div>
 
           <div className="reviews-grid">
@@ -234,7 +370,7 @@ const Home = () => {
                 </div>
                 <p className="review-text">"{r.review}"</p>
                 <div className="review-author">
-                  <div className="review-avatar" style={{ background: `linear-gradient(135deg, ${r.color}, ${r.color}aa)` }}>
+                  <div className="review-avatar" style={{ background: r.color }}>
                     {r.avatar}
                   </div>
                   <div className="review-info">
@@ -272,10 +408,11 @@ const Home = () => {
         }
 
         /* Staggered delays for better effect */
-        .feature-card:nth-child(1) { transition-delay: 0.1s; }
-        .feature-card:nth-child(2) { transition-delay: 0.2s; }
-        .feature-card:nth-child(3) { transition-delay: 0.3s; }
-        .feature-card:nth-child(4) { transition-delay: 0.4s; }
+        .feature-card-5:nth-child(1) { transition-delay: 0.1s; }
+        .feature-card-5:nth-child(2) { transition-delay: 0.2s; }
+        .feature-card-5:nth-child(3) { transition-delay: 0.3s; }
+        .feature-card-5:nth-child(4) { transition-delay: 0.4s; }
+        .feature-card-5:nth-child(5) { transition-delay: 0.5s; }
 
         .step-item:nth-child(1) { transition-delay: 0.15s; }
         .step-item:nth-child(2) { transition-delay: 0.3s; }
@@ -284,119 +421,183 @@ const Home = () => {
         .step-item:nth-child(5) { transition-delay: 0.75s; }
 
         /* ── Why Choose Us ── */
-        .why-choose-us {
+        .why-choose-us-5 {
           padding: 8rem 0;
-          background: #eef6ff;
+          background: linear-gradient(135deg, #f4faff 0%, #f4fdf8 100%);
           position: relative;
           overflow: hidden;
         }
-        .section-header {
+        .why-choose-us-5::before {
+          content: '';
+          position: absolute;
+          top: -150px;
+          left: -100px;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(24, 119, 242, 0.08) 0%, transparent 70%);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+        .why-choose-us-5::after {
+          content: '';
+          position: absolute;
+          bottom: -150px;
+          right: -100px;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+        .bg-dots {
+          position: absolute;
+          width: 120px;
+          height: 120px;
+          background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+          background-size: 20px 20px;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        .bg-dots-left { top: 15%; left: 5%; }
+        .bg-dots-right { top: 15%; right: 5%; }
+
+        .section-header-5 {
           text-align: center;
           margin-bottom: 5rem;
-          max-width: 700px;
+          position: relative;
+          z-index: 2;
+          padding: 0 1.5rem;
+        }
+        .section-header-5 h2 {
+          font-size: 2.2rem;
+          color: #0f172a;
+          font-weight: 800;
+          line-height: 1.2;
+        }
+        .brand-title {
+          position: relative;
+          display: inline-block;
+          background: linear-gradient(90deg, #1877f2, #10b981);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          padding-bottom: 0.8rem;
+        }
+
+
+        .features-grid-5 {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 2rem;
+          max-width: 1250px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+          padding: 0 1.5rem;
+        }
+
+        .feature-card-5 {
+          width: calc(33.333% - 1.34rem);
+          min-width: 320px;
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 2.5rem;
+          border-left: 8px solid var(--color);
+          box-shadow: -8px 12px 25px var(--shadow), 0 5px 15px rgba(0,0,0,0.03);
+          text-align: left;
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card-5:hover {
+          transform: translateY(-8px);
+          box-shadow: -12px 18px 35px var(--shadow), 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-5-corner {
+          position: absolute;
+          bottom: -40px;
+          right: -40px;
+          width: 150px;
+          height: 150px;
+          background: var(--bg-light);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+
+        .icon-box-5 {
+          width: 64px;
+          height: 64px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+        }
+        .icon-box-5 svg {
+          width: 32px;
+          height: 32px;
+        }
+
+        .feature-card-5 h3 {
+          font-size: 1.4rem;
+          font-weight: 800;
+          color: #1e293b;
+          margin-bottom: 1rem;
+          position: relative;
+          z-index: 2;
+        }
+        .feature-card-5 p {
+          font-size: 1.05rem;
+          color: #64748b;
+          line-height: 1.6;
+          position: relative;
+          z-index: 2;
+        }
+
+        @media (max-width: 1024px) {
+          .feature-card-5 {
+            width: calc(50% - 1rem);
+          }
+        }
+        @media (max-width: 768px) {
+          .feature-card-5 {
+            width: 100%;
+          }
+          .section-header-5 h2 {
+            font-size: 2.5rem;
+          }
+          .bg-dots {
+            display: none;
+          }
+          .why-choose-us-5 {
+            padding: 4rem 0;
+          }
+        }
+
+        /* ── How It Works ── */
+        .section-header {
+          text-align: center;
+          margin-bottom: 4rem;
+          max-width: 750px;
           margin-left: auto;
           margin-right: auto;
           padding: 0 1.5rem;
         }
-        .section-subtitle {
-          display: inline-block;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          color: var(--accent);
-          font-size: 0.9rem;
-          margin-bottom: 0.75rem;
-          font-family: var(--font-heading);
-        }
         .section-title {
-          font-size: 3rem;
-          margin-bottom: 1.5rem;
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
           color: #0f172a;
           line-height: 1.2;
+          font-weight: 800;
         }
         .section-desc {
           font-size: 1.15rem;
           color: #64748b;
           line-height: 1.7;
         }
-        .features-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 2rem;
-          max-width: 1350px;
-          margin: 0 auto;
-          padding: 0 1.5rem;
-        }
-        .feature-card {
-          background: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(10px);
-          padding: 2.5rem 2rem;
-          border-radius: 24px;
-          border: 1px solid rgba(0,0,0,0.03);
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          text-align: left;
-          position: relative;
-          z-index: 1;
-          overflow: hidden;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-        }
-        .feature-card:hover {
-          transform: translateY(-12px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-          background: #ffffff;
-        }
-        .feature-hover-line {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 4px;
-          width: 0;
-          transition: width 0.4s ease;
-        }
-        .feature-card:hover .feature-hover-line {
-          width: 100%;
-        }
-        .feature-icon-box {
-          width: 60px;
-          height: 60px;
-          border-radius: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 1.5rem;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .feature-card:hover .feature-icon-box {
-          transform: scale(1.1) rotate(-5deg);
-        }
-        .feature-icon-box svg {
-          width: 28px;
-          height: 28px;
-        }
-        .feature-card h3 {
-          font-size: 1.35rem;
-          margin-bottom: 1rem;
-          color: #0f172a;
-        }
-        .feature-card p {
-          color: #64748b;
-          font-size: 1rem;
-          line-height: 1.6;
-        }
-
-        @media (max-width: 1200px) {
-          .features-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
-          .features-grid { grid-template-columns: 1fr; }
-          .why-choose-us { padding: 4rem 1rem; }
-          .section-title { font-size: 2.2rem; }
-          .section-header { margin-bottom: 3rem; }
-        }
-
-        /* ── How It Works ── */
         .how-it-works {
-          padding: 8rem 0;
+          padding: 4rem 0 8rem 0;
           background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%);
         }
         .process-path {
@@ -489,63 +690,77 @@ const Home = () => {
 
         /* ── Testimonials ── */
         .testimonials-section {
-          padding: 10rem 0;
-          background: radial-gradient(circle at 50% 50%, #f0f7ff 0%, #eef8ff 100%);
+          padding: 8rem 0;
+          background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
           position: relative;
           overflow: hidden;
         }
 
-        .testimonials-section::before {
-          content: '';
-          position: absolute;
-          top: -200px;
-          right: -200px;
-          width: 600px;
-          height: 600px;
-          background: radial-gradient(circle, rgba(0, 132, 255, 0.06) 0%, transparent 70%);
-          border-radius: 50%;
-          pointer-events: none;
+        .section-header-left {
+          text-align: center;
+          margin-bottom: 3.5rem;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0 1.5rem;
+        }
+
+        .section-title-left {
+          font-size: 2.2rem;
+          margin-bottom: 0.5rem;
+          color: #0f172a;
+          line-height: 1.2;
+          font-weight: 800;
+        }
+
+        .text-gradient-blue {
+          background: linear-gradient(90deg, #3b82f6, #06b6d4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .section-desc-left {
+          font-size: 1rem;
+          color: #475569;
+          line-height: 1.6;
         }
 
         .reviews-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 2rem;
-          max-width: 1350px;
+          max-width: 1250px;
           margin: 0 auto;
           padding: 0 1.5rem;
         }
 
         .review-card {
           background: #fff;
-          border-radius: 32px;
-          padding: 3rem 2.5rem;
+          border-radius: 20px;
+          padding: 2.5rem 2rem;
           border: 1px solid rgba(255, 255, 255, 0.8);
-          box-shadow: 
-            0 10px 40px -10px rgba(0, 0, 0, 0.08),
-            0 20px 25px -5px rgba(0, 0, 0, 0.02);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
           display: flex;
           flex-direction: column;
-          gap: 1.2rem;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          gap: 1.5rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .review-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-          border-color: rgba(0, 132, 255, 0.2);
+          transform: translateY(-8px);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
 
         .review-stars {
           color: #f59e0b;
-          font-size: 1.2rem;
+          font-size: 1.25rem;
           letter-spacing: 2px;
         }
 
         .review-text {
-          color: #475569;
-          font-size: 0.97rem;
-          line-height: 1.75;
+          color: #64748b;
+          font-size: 0.95rem;
+          line-height: 1.7;
           flex: 1;
           font-style: italic;
         }
@@ -554,22 +769,26 @@ const Home = () => {
           display: flex;
           align-items: center;
           gap: 1rem;
-          padding-top: 1rem;
+          padding-top: 1.5rem;
           border-top: 1px solid #f1f5f9;
         }
 
         .review-avatar {
-          width: 48px;
-          height: 48px;
+          width: 44px;
+          height: 44px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #fff;
-          font-weight: 800;
-          font-size: 0.9rem;
+          font-weight: 700;
+          font-size: 0.95rem;
           flex-shrink: 0;
-          letter-spacing: 1px;
+        }
+
+        .review-info {
+          display: flex;
+          flex-direction: column;
         }
 
         .review-info strong {
@@ -580,17 +799,18 @@ const Home = () => {
         }
 
         .review-info span {
-          font-size: 0.82rem;
+          font-size: 0.85rem;
           color: #94a3b8;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1024px) {
           .reviews-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
           .reviews-grid { grid-template-columns: 1fr; }
           .testimonials-section { padding: 4rem 0; }
+          .section-header-left { text-align: center; }
         }
 
         .hero-section {
@@ -888,6 +1108,212 @@ const Home = () => {
           }
           .time-grid {
             grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        /* ── Industries We Serve ── */
+        .industries-section {
+          padding: 8rem 0;
+          background: #f8fafc;
+          position: relative;
+          overflow: hidden;
+        }
+        .industries-blob-left {
+          position: absolute;
+          top: -10%;
+          left: -10%;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(56, 189, 248, 0) 70%);
+          z-index: 0;
+        }
+        .industries-blob-right {
+          position: absolute;
+          top: -10%;
+          right: -10%;
+          width: 600px;
+          height: 600px;
+          background: radial-gradient(circle, rgba(74, 222, 128, 0.3) 0%, rgba(74, 222, 128, 0) 70%);
+          z-index: 0;
+        }
+        .industries-section .container {
+          position: relative;
+          z-index: 1;
+        }
+        .industries-header {
+          text-align: center;
+          margin-bottom: 5rem;
+        }
+        .badge-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 1rem;
+          background: #e0f2fe;
+          padding: 0.5rem 1.5rem;
+          border-radius: 50px;
+          margin-bottom: 1.5rem;
+        }
+        .badge-line {
+          width: 20px;
+          height: 2px;
+          background: #38bdf8;
+        }
+        .badge-text {
+          color: #0284c7;
+          font-weight: 700;
+          font-size: 0.85rem;
+          letter-spacing: 1px;
+        }
+        .industries-title {
+          font-size: 3.5rem;
+          color: #0f172a;
+          font-weight: 800;
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+        .industries-title svg {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 10px;
+        }
+        .industries-title .title-text {
+          display: inline-block;
+        }
+        .spark-left, .spark-right {
+          transform: translateY(-5px);
+        }
+        .industries-desc {
+          font-size: 1.15rem;
+          color: #475569;
+          max-width: 700px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .industries-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          margin-bottom: 3rem;
+          max-width: 1250px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .industry-card {
+          background: #ffffff;
+          border-radius: 20px;
+          padding: 2.5rem;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+          border: 1px solid var(--ind-border);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+        }
+        .industry-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .ind-bg-shape {
+          position: absolute;
+          bottom: -50px;
+          right: -50px;
+          width: 250px;
+          height: 250px;
+          opacity: 0.8;
+          z-index: 0;
+          pointer-events: none;
+        }
+        .ind-card-content {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        .ind-card-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1.25rem;
+        }
+        .ind-icon-box {
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          background: var(--ind-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          flex-shrink: 0;
+        }
+        .ind-icon-box svg {
+          width: 26px;
+          height: 26px;
+        }
+        .ind-card-header h3 {
+          font-size: 1.4rem;
+          color: #0f172a;
+          font-weight: 800;
+          line-height: 1.2;
+        }
+        .ind-desc {
+          color: #475569;
+          font-size: 0.95rem;
+          margin-bottom: 1.5rem;
+          line-height: 1.5;
+        }
+        .ind-checks {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 2rem 0;
+          flex-grow: 1;
+        }
+        .ind-checks li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+          margin-bottom: 0.75rem;
+          color: #334155;
+          font-size: 0.95rem;
+          font-weight: 600;
+        }
+        .ind-checks li svg {
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        @media (max-width: 1024px) {
+          .industries-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .industries-grid {
+            grid-template-columns: 1fr;
+          }
+          .industries-title {
+            font-size: 2.2rem;
+          }
+          .industries-title svg {
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
+          }
+          .industries-header {
+            margin-bottom: 3rem;
+          }
+          .badge-line {
+            display: none;
+          }
+          .badge-pill {
+            padding: 0.5rem 1rem;
+            text-align: center;
+            max-width: 100%;
           }
         }
       `}</style>
