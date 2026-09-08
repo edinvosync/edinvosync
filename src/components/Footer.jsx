@@ -17,20 +17,20 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
+            <li><Link to="/about" onClick={() => window.scrollTo(0, 0)}>About Us</Link></li>
+            <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>Services</Link></li>
+            <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
           </ul>
         </div>
 
         <div className="footer-services">
           <h4>Services</h4>
           <ul>
-            <li><Link to="/services">Point of Sale (POS)</Link></li>
-            <li><Link to="/services">Web Development</Link></li>
-            <li><Link to="/services">Credit Card Processing</Link></li>
-            <li><Link to="/services">Digital Marketing</Link></li>
+            <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>Point of Sale (POS)</Link></li>
+            <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>Web Development</Link></li>
+            <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>Credit Card Processing</Link></li>
+            <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>Digital Marketing</Link></li>
             <li><a href="https://edinvosync.com/converter">EDI Integration</a></li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} EDInvoSync. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} EDInvosync. All rights reserved.</p>
         </div>
       </div>
 
