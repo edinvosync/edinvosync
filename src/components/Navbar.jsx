@@ -54,6 +54,16 @@ const Navbar = () => {
             ))}
           </ul>
 
+          {/* Call Now Button - Desktop */}
+          <div className="nav-contact desktop-only">
+            <a href="tel:+19432302133" className="nav-phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>+1 (943) 230-2133</span>
+            </a>
+          </div>
+
           {/* Mobile Toggle Button */}
           <button
             className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
@@ -68,7 +78,7 @@ const Navbar = () => {
           {/* Mobile Drawer */}
           <div className={`mobile-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
             {/* Close Button X inside drawer */}
-            <button 
+            <button
               className="drawer-close-btn"
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Close Menu"
@@ -84,7 +94,7 @@ const Navbar = () => {
                 const isActive = location.pathname === link.path;
                 let icon;
                 let activeClass = isActive ? 'drawer-link-active' : 'drawer-link-inactive';
-                
+
                 // Assign icon based on path
                 if (link.path === '/') {
                   icon = (
@@ -116,9 +126,9 @@ const Navbar = () => {
                 }
 
                 return (
-                  <Link 
+                  <Link
                     key={link.path}
-                    to={link.path} 
+                    to={link.path}
                     className={`drawer-link ${activeClass}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -155,7 +165,7 @@ const Navbar = () => {
                   </p>
                 </div>
               </div>
-              <button 
+              <button
                 className="drawer-cta-btn"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
@@ -503,6 +513,38 @@ const Navbar = () => {
           width: 26px;
           height: 26px;
           transform: rotate(45deg);
+        }
+
+        .nav-phone {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #ffffff;
+          font-weight: 700;
+          font-size: 0.95rem;
+          text-decoration: none;
+          background: linear-gradient(135deg, #60a5fa, #2563eb);
+          padding: 10px 20px;
+          border-radius: 50px;
+          transition: all 0.3s ease;
+          font-family: var(--font-heading, inherit);
+          box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+        }
+
+        .nav-phone svg {
+          width: 18px;
+          height: 18px;
+          color: #ffffff;
+        }
+
+        .nav-phone:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+          background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .nav-phone:hover svg {
+          color: #fff;
         }
 
         .drawer-cta-text-wrap {
