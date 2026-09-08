@@ -70,7 +70,7 @@ const Contact = () => {
                     <p className="location-label">USA</p>
                     <p>4254 Lafayette Street, Marianna, FL 32446, USA</p>
                     <p className="location-label">India</p>
-                    <p>FF 21, Rajdhani Society, Warasiya Ring Rd, nr. Apollo Pharmacy, Gayatri Nagar Society, Kishanwadi, Vadodara, Gujarat 390019</p>
+                    <p>FF 21, Rajdhani Society, Warasiya Ring Rd, Vadodara, Gujarat 390006</p>
                   </div>
                 </div>
                 <div className="info-item reveal">
