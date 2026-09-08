@@ -12,30 +12,44 @@ const values = [
 ];
 
 const journey = [
-  { 
-    date: 'October 2024', 
-    title: 'The Foundation', 
-    desc: 'EDInvoSync was born with a singular vision: to revolutionize how enterprises exchange data, eliminating manual friction from global trade.',
+  {
+    date: 'October 2025',
+    title: 'The Foundation',
+    desc: 'EDInvosync was born with a singular vision: to revolutionize how enterprises exchange data, eliminating manual friction from global trade.',
     icon: '🌱',
     color: '#1a73e8'
   },
-  { 
-    date: 'December 2023', 
-    title: 'First Major Milestone', 
+  {
+    date: 'December 2025',
+    title: 'First Major Milestone',
     desc: 'Successfully launched our core EDI-to-ERP bridge, enabling seamless synchronization for our first wave of enterprise partners.',
     icon: '⚡',
     color: '#7c3aed'
   },
-  { 
-    date: 'Early 2024', 
-    title: 'Global Expansion', 
+  {
+    date: 'Early 2026',
+    title: 'Global Expansion',
     desc: 'Expanded our infrastructure to support multi-national logistics and complex cross-border compliance standards.',
     icon: '🌍',
     color: '#0d9488'
   },
-  { 
-    date: 'Present Day', 
-    title: 'Innovation Without Limits', 
+  {
+    date: 'March 2026',
+    title: 'Web Development & POS',
+    desc: 'Launched comprehensive Web Development and Point of Sale (POS) solutions to modernize digital storefronts.',
+    icon: '💻',
+    color: '#3b82f6'
+  },
+  {
+    date: 'April 2026',
+    title: 'Digital Marketing Services',
+    desc: 'Introduced Digital Marketing to help businesses expand their online presence and drive measurable growth.',
+    icon: '📈',
+    color: '#ec4899'
+  },
+  {
+    date: 'Present Day',
+    title: 'Innovation Without Limits',
     desc: 'Today, we continue to push the boundaries of real-time connectivity, helping businesses scale faster than ever before.',
     icon: '🚀',
     color: '#f59e0b'
@@ -82,7 +96,7 @@ const About = () => {
           <span className="about-eyebrow reveal">Who We Are</span>
           <h1 className="about-hero-title reveal">Building the Future of <span className="text-gradient">Digital Connectivity</span></h1>
           <p className="about-hero-sub reveal">
-            EDInvoSync is a technology company on a mission to eliminate friction from enterprise data exchange —
+            EDInvosync is a technology company on a mission to eliminate friction from enterprise data exchange —
             empowering businesses to move faster, connect smarter, and grow without limits.
           </p>
         </div>
@@ -136,7 +150,7 @@ const About = () => {
           <h2 className="section-title">Our <span className="text-gradient">Journey</span></h2>
           <p className="section-subtitle">A look back at how we've grown and where we're headed.</p>
         </div>
-        
+
         <div className="journey-timeline">
           <div className="timeline-line" />
           {journey.map((item, i) => (
